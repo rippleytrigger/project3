@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "../base/base.html" %}
 
 {% block title %}
     Log In 
@@ -7,6 +7,7 @@
 {% block body %}
     <div class="">
         <form action="" method="POST">
+            {% csrf_token %}
             <div>
                 <label for="username">Your Username</label>
                 <input type="text" name="username" />
