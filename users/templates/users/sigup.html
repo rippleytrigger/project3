@@ -11,28 +11,28 @@
                 {% csrf_token %}
                 <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
+                        <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username" name="username">
                 </div>
                 <div class="form-group">
                     <label for="firstname">First Name</label>
-                    <input type="text" class="form-control" id="firstname" aria-describedby="firstnameHelp" placeholder="Enter firstname">
+                    <input type="text" class="form-control" id="firstname" aria-describedby="firstnameHelp" placeholder="Enter firstname" name="first_name">
                 </div>
                 <div class="form-group">
                     <label for="lastname">Last Name</label>
-                    <input type="text" class="form-control" id="lastname" aria-describedby="lastnameHelp" placeholder="Enter lastname">
+                    <input type="text" class="form-control" id="lastname" aria-describedby="lastnameHelp" placeholder="Enter lastname" name="last_name">
                 </div>
                 <div class="form-group">
                     <label for="lastname">Email</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter lastname">
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                 </div>
                 <div class="form-group">
                     <label for="password">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirm-password" placeholder="Password">
+                    <input type="password" class="form-control" id="confirm-password" placeholder="Password" name="password2">
                 </div>
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -40,6 +40,11 @@
                     </div>
                     <button type="submit" class="btn btn-primary"> Register </button>
             </form>
+            {% if message %}
+            <div class="message">
+                {{ message }}
+            </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
