@@ -23,6 +23,7 @@ class NonSizableDishes(models.Model):
     classification = models.ForeignKey(Classification, on_delete=models.CASCADE)
     name = models.CharField(max_length=120)
     price = models.FloatField(default=0)
+    topping_number = models.IntegerField(default=0)
     meal_type =  models.ForeignKey(MealTypes, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -33,6 +34,7 @@ class SizableDishes(models.Model):
     name = models.CharField(max_length=120)
     price_small = models.FloatField(null=True, blank=True, default=0)
     price_large = models.FloatField(null=True, blank=True, default=0)
+    topping_number = models.IntegerField(default=0)
     meal_type =  models.ForeignKey(MealTypes, on_delete=models.CASCADE)
 
     def __str__(self):
